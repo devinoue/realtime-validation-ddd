@@ -1,22 +1,10 @@
 # realtime-validation-ddd
 
-> My unreal Nuxt.js project
-
-## Build Setup
-
-```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+ドメイン駆動設計によるNuxt/Vueアプリケーションにおいて、しばしば「利口なUI」と呼ばれるアンチパターンに遭遇する。  
+このとき本来ならドメインに封じておくドメイン知識が、UI層に流出してしまい、  
+もしもドメインに修正があったときエンジニアはUI層に流出した知識も修正する二度手間に煩わされることになる  
+また昨今はUX的観点からインラインによるリアルタイムバリデーションの必要性が説かれるようになっていた。  
+従来のVueではそのような操作は手間だったが、Vue3/Composition API以降は比較的容易になっているので、  
+ここでその例を提示したい。  
+  
+[ドメイン駆動設計 with Vue/Nuxt(Composition API)でリアルタイム・バリデーション](https://qiita.com/JDM/items/0cefc43b6ae31f6db87b)
