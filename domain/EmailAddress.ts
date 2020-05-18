@@ -5,7 +5,7 @@ export default class EmailAddress {
 
   static validation(email: string) {
     if (email === '') {
-      throw new TypeError('メールアドレスを入力してください')
+      throw new Error('メールアドレスを入力してください')
     }
     if (email.match(/.+@.+\..+/) === null) {
       throw new Error('Eメールアドレスのフォーマットに従って入力してください')

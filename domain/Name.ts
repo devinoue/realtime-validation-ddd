@@ -5,13 +5,13 @@ export default class Name {
 
   static validation(name: string): never | void {
     if (name === '') {
-      throw new TypeError('名前を入力してください')
+      throw new Error('名前を入力してください')
     }
     if (typeof name !== 'string') {
       throw new TypeError('名前は文字列にしてください')
     }
     if (name.length > 8) {
-      throw new TypeError('名前は8文字以内にしてください')
+      throw new Error('名前は8文字以内にしてください')
     }
   }
 }
