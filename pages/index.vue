@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <span v-show="errors.name" class="error">{{ errors.name }}</span>
-    <span>名前 : <input v-model="name" type="text"/></span>
+    <span>名前 : <input v-model="forms.name" type="text"/></span>
     <br />
     <span v-show="errors.email" class="error">{{ errors.email }}</span>
-    <span>メールアドレス : <input v-model="email" type="text"/></span>
+    <span>メールアドレス : <input v-model="forms.email" type="text"/></span>
     <br />
   </div>
 </template>
