@@ -1,4 +1,4 @@
-import { ref, watch, reactive } from '@vue/composition-api'
+import { watch, reactive } from '@vue/composition-api'
 import Name from '~/domain/Name'
 import EmailAddress from '~/domain/EmailAddress'
 
@@ -9,20 +9,18 @@ interface IForm {
 
 export default function() {
   const defaultInput: IForm = { name: '', email: '' }
-  const errors = ref(defaultInput)
 
-  const forms = reactive({
-    name: '',
-    email: ''
-  })
+  const forms = reactive({ ...defaultInput })
+  const errors = reactive({ ...defaultInput })
+
   watch(
     () => forms.name,
     () => {
-      errors.value.name = ''
+      errors.name = ''
       try {
         Name.validation(forms.name)
       } catch (e) {
-        errors.value.name = e.message
+        errors.name = e.message
       }
     },
     { lazy: true }
@@ -30,11 +28,11 @@ export default function() {
   watch(
     () => forms.email,
     () => {
-      errors.value.email = ''
+      errors.email = ''
       try {
         EmailAddress.validation(forms.email)
       } catch (e) {
-        errors.value.email = e.message
+        errors.email = e.message
       }
     },
     { lazy: true }
